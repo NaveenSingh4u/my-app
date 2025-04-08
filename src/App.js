@@ -48,28 +48,29 @@ function App() {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-md space-y-4">
-      <h2 className="text-xl font-bold">IBM AI Text Generator</h2>
-      <input
-        type="text"
-        className="border p-2 w-full rounded"
-        placeholder="Enter prompt..."
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-      <button
-        className="px-4 py-2 bg-blue-500 text-white rounded"
-        onClick={callAPI}
-        disabled={loading}
-      >
-        {loading ? "Generating..." : "Generate"}
-      </button>
-      {error && <p className="text-red-500">Error: {error}</p>}
-      {responseText && (
-        <div className="p-3 mt-3 bg-gray-100 rounded">
-          <strong>Response:</strong> {responseText}
-        </div>
-      )}
+    <div className="container">
+      <div className="card">
+        <h2>💡 IBM AI Text Generator</h2>
+        <input
+          type="text"
+          className="input-box"
+          placeholder="Enter a prompt..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+        <button className="btn" onClick={callAPI} disabled={loading}>
+          {loading ? "Generating..." : "Generate"}
+        </button>
+
+        {error && <p className="error">⚠️ {error}</p>}
+
+        {responseText && (
+          <div className="response-box">
+            <strong>Response:</strong>
+            <p>{responseText}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
