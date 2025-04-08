@@ -1,38 +1,87 @@
-.App {
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  margin-bottom: 20px;
+  color: #1a202c;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-box {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-box:focus {
+  border-color: #3182ce;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #3182ce;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:disabled {
+  background-color: #90cdf4;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover:not(:disabled) {
+  background-color: #2b6cb0;
+}
+
+.response-box {
+  margin-top: 24px;
+  background-color: #f7fafc;
+  padding: 16px;
+  border-radius: 8px;
+  color: #2d3748;
+  border-left: 4px solid #3182ce;
+}
+
+.error {
+  margin-top: 16px;
+  color: #e53e3e;
+  background: #fff5f5;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid #e53e3e;
 }
